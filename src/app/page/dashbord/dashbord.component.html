@@ -1,0 +1,10 @@
+<p>dashbord works!</p>
+<form [formGroup]="valueForm" (submit)="onFormSubmit()">
+<input type="text" formControlName="name">
+<button type="submit">Save</button>
+
+</form>
+<h1>{{(item | async)?.name}}</h1>
+<ul class="list-group-item" *ngFor="let s of sample | async">
+  {{s.name}}
+</ul>

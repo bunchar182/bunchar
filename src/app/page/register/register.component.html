@@ -1,0 +1,23 @@
+<form [formGroup]="loginForm" (submit)="onFormSumit()">
+  <div class="form-group">
+      <label for="exampleInputPassword1">Email</label>
+      <input formControlName="email"
+      class="form-control"
+      [ngClass]="{ 'is-invalid': isEmailValid()}" />
+      <div class="invalid-feedback">
+        Please choose email
+      </div>
+    </div>
+  <div class="form-group">
+  <label for="exampleInputPassword1">Password</label>
+  <input formControlName="password"
+  class="form-control"
+    [ngClass]="{ 'is-invalid': isEmailValid()}"
+  >
+  <div class="invalid-feedback">
+      Please choose password
+    </div>
+</div>
+  <button type="submit" >Register</button>
+
+</form>

@@ -1,0 +1,9 @@
+<form [formGroup]="phoneForm" (submit)="onPhoneSubmit()">
+ <input type="text" formControlName="phoneNo">
+ <button type="submit">Request OTP</button>
+</form>
+<div id="verified-div"></div>
+<form [formGroup]="otpForm" (submit)="onOtpSubmit()">
+    <input type="text" formControlName="otp">
+    <button type="submit">Confirm</button>
+</form>

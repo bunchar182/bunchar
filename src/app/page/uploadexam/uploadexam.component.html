@@ -1,0 +1,6 @@
+<input type="file" (change)="onUpload($event)" />
+<progressbar [value]="uploadPercent | async"></progressbar>
+<progressbar class="progress" [value]="uploadPercent | async" [max]="100"></progressbar>
+<h1>{{dowloadPath | async}}</h1>
+<img [src]="dowloadPath | async" />
+<a [href]="dowloadPath | async">download file</a>

@@ -1,0 +1,32 @@
+<p>{{title}} {{name}}</p>
+<input type="text" [(ngModel)]="url">
+<a [href]="url" target="_blank">Go to url</a>
+<button class="btn btn-primary" (click)="onButtonClick()">Say Hello</button>
+
+<div *ngIf="active" class="jumbotron">
+  <div class="display-4">Show Me</div>
+</div>
+<button class="btn btn-primary" (click)="onToggle()">
+  Toggle
+</button>
+
+<ul class="list-group">
+  <li appHighlight="green" [ngClass]="{active:item=='Two',disabled:item =='Four'}" class="list-group-item"
+    *ngFor="let item of items">{{item}}
+
+  </li>
+</ul>
+
+{{price | number:'1.2'}}
+{{current | date:'dd/MM/y H:mm:ss'}}
+
+<!-- {{ '1212521252125444' | trimCreditCard: '#'}} -->
+
+<table class="table">
+  <tr *ngFor="let item of posts" appHighlight="green">
+    <td>{{item.id}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.body}}</td>
+    <td>{{item.userId}}</td>
+  </tr>
+</table>

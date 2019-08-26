@@ -1,0 +1,37 @@
+<form [formGroup]="loginForm" (submit)="onFormSubmit()">
+    <div class="form-group">
+        <label for="exampleInputPassword1">Email</label>
+        <input formControlName="email"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': isEmailValid('email')}" />
+        <div class="invalid-feedback">
+          Please choose email
+        </div>
+      </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input formControlName="password"
+    class="form-control"
+    type="password"
+      [ngClass]="{ 'is-invalid': isEmailValid('password')}"
+    >
+    <div class="invalid-feedback">
+        Please choose password
+      </div>
+  </div>
+    <button type="submit"  >login</button>
+
+  </form>
+
+<button class="btn btn-primary" (click)="onGoogleClick()">Connect with google</button>
+<button class="btn btn-primary" (click)="onFacebookClick()">Connect with facebook</button>
+<button class="btn btn-primary" (click)="onGitHubClick()">Connect with gitHub</button>
+<button class="btn btn-link" (click)="onPhoneClick()">Connect with phone</button>
+
+<alert type="warning" [isOpen]="loginForm.invalid">
+  <strong>Warning!</strong> Please fill ub all field.
+</alert>
+
+<alert type="danger" [isOpen]="isError" [dismissible]="true" [dismissOnTimeout]="1000" (onClose)="onErrorClose()">
+  <strong>Error</strong>{{errorMessage}}
+</alert>

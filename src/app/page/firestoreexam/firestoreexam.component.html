@@ -1,0 +1,22 @@
+<form [formGroup]="itemForm" (click)="onFormSubmit()">
+  <input type="text" formControlName="code">
+  <input type="text" formControlName="name">
+  <input type="text" formControlName="size">
+  <button type="submit">Save123</button>
+</form>
+<table class="table">
+  <tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Size</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let item of items | async">
+  <td>{{item.code}}</td>
+  <td>{{item.name}}</td>
+  <td>{{item.size}}</td>
+  <td>
+    <button class="btn btn-link" (click)="onDeleteClick(item.code);">delete</button>
+  </td>
+</tr>
+</table>

@@ -1,0 +1,10 @@
+<form #simpleForm="ngForm" (submit)="onFormSubmit(simpleForm)">
+  <input type="text" ngModel name="first" required minlength="5" #first="ngModel"
+  pattern=""/>
+  <input type="text" ngModel name="last" required #last="ngModel" />
+  <button type="submit">Save</button>
+</form>
+<h1>{{simpleForm.value | json | uppercase}}</h1>
+<h1>{{ simpleForm.valid}}</h1>
+<h2>{{ first.valid}}</h2>
+<h2>{{ last.valid}}</h2>
